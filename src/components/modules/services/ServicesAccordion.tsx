@@ -64,43 +64,44 @@ export const ServicesAccordion = () => {
   };
 
   return (
-    <div className="w-full bg-white border border-gray-100 shadow-xl rounded-2xl overflow-hidden flex">
-      <div className="w-2.5 bg-linear-to-b from-primary to-indigo-600 shrink-0" />
+    <div className="w-full bg-white border border-slate-100 shadow-xl rounded-3xl overflow-hidden flex">
+      <div className="w-2 bg-linear-to-b from-primary to-indigo-600 shrink-0" />
       
       {/* Accordion Content */}
       <div className="flex-1 p-6 sm:p-8">
-        <h3 className="text-xl sm:text-2xl font-extrabold text-indigo-950 mb-6 leading-tight">
-          Learn More About Our Services
+        <h3 className="text-xl font-bold text-slate-900 mb-6 leading-tight uppercase tracking-wide">
+          SERVICE BREAKDOWNS
         </h3>
         
-        <div className="divide-y divide-gray-100 border-t border-gray-100">
+        <div className="divide-y divide-slate-100 border-t border-slate-100">
           {accordionData.map((item, idx) => {
             const isOpen = openIndex === idx;
             return (
               <div key={idx} className="py-4">
                 <button
                   onClick={() => toggleItem(idx)}
-                  className="w-full flex items-center justify-between text-left focus:outline-none group py-1"
+                  className="w-full flex items-center justify-between text-left focus:outline-none group py-1 cursor-pointer"
                   aria-expanded={isOpen}
                 >
                   <div className="flex items-center gap-3">
                     <span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
                     <span className={clsx(
-                      "text-sm sm:text-base font-bold transition-colors duration-250",
-                      isOpen ? "text-primary" : "text-gray-700 group-hover:text-primary"
+                      "text-xs sm:text-sm font-extrabold tracking-wide uppercase transition-colors duration-250",
+                      isOpen ? "text-primary" : "text-slate-700 group-hover:text-primary"
                     )}>
                       {item.title}
                     </span>
                   </div>
                   <span className={clsx(
-                    "p-1 rounded-full bg-gray-50 text-gray-400 group-hover:text-primary group-hover:bg-primary/10 transition-colors duration-200",
+                    "p-1 rounded-lg bg-slate-50 text-slate-400 group-hover:text-primary group-hover:bg-primary/10 transition-colors duration-200",
                     isOpen && "text-primary bg-primary/10"
                   )}>
                     {isOpen ? (
                       <RiSubtractLine className="w-4 h-4" />
                     ) : (
                       <RiAddLine className="w-4 h-4" />
-                    )}
+                    )
+                    }
                   </span>
                 </button>
                 
@@ -109,7 +110,7 @@ export const ServicesAccordion = () => {
                   "overflow-hidden transition-all duration-300 ease-in-out pl-4.5",
                   isOpen ? "max-h-40 opacity-100 mt-3 mb-1" : "max-h-0 opacity-0"
                 )}>
-                  <p className="text-xs sm:text-sm text-gray-500 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-slate-400 leading-relaxed font-medium">
                     {item.content}
                   </p>
                 </div>

@@ -22,7 +22,7 @@ export const Footer = () => {
               href="/" 
               className="text-2xl font-extrabold text-white tracking-tight"
             >
-              NAME
+              YOUR COMPANY
             </Link>
             <p className="text-sm text-slate-500 leading-relaxed max-w-xs">
               We provide dependable audit, statutory compliance, transfer pricing, and corporate tax advisory solutions to help companies scale.
@@ -100,8 +100,8 @@ export const Footer = () => {
               </div>
               <div className="flex gap-3 items-center">
                 <RiMailLine className="w-5 h-5 text-primary shrink-0" />
-                <a href="mailto:info@ABCgmail.com" className="hover:text-white transition-colors duration-200">
-                  info@ABCgmail.com
+                <a href="mailto:info@yourcompany.com" className="hover:text-white transition-colors duration-200">
+                  info@yourcompany.com
                 </a>
               </div>
             </div>
@@ -110,7 +110,7 @@ export const Footer = () => {
         </div>
 
         <div className="border-t border-slate-900 mt-16 pt-8 text-center text-xs text-slate-600">
-          <p>&copy; {new Date().getFullYear()} NAME. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} YOUR COMPANY. All rights reserved.</p>
         </div>
       </div>
     </footer>

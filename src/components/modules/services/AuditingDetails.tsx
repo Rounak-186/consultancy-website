@@ -1,81 +1,80 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
+import { Button } from "@/components/ui/Button";
+import { FadeInUp, StaggerContainer, StaggerItem, ScaleIn } from "@/components/animation";
 
 export const AuditingDetails = () => {
   return (
-    <section className="bg-white w-full py-20 lg:py-28">
+    <section className="bg-slate-50/50 w-full py-20 lg:py-28">
       <div className="max-w-6xl mx-auto px-6 sm:px-12">
         
-        {/* Title */}
-        <h2 className="text-3xl sm:text-4xl font-extrabold text-[#2B0EA8] mb-12 text-left">
-          Audit and Assurance
-        </h2>
+        <FadeInUp className="mb-16 text-center">
+          <span className="text-primary font-bold text-xs sm:text-sm uppercase tracking-[0.25em] mb-4 block">
+            Core Service
+          </span>
+          <h2 className="text-3xl sm:text-5xl font-black text-slate-900 uppercase">
+            AUDIT &amp; <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">ASSURANCE</span>
+          </h2>
+          <div className="w-16 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mt-4 rounded-full" />
+        </FadeInUp>
 
-        {/* 2x2 Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12">
-          
-          {/* Card 1 */}
-          <div className="flex flex-col">
-            <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3">
-              Internal & Concurrent Audit
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
+          <StaggerItem className="bg-white rounded-3xl border border-slate-100 p-8 shadow-xs hover:shadow-md transition-shadow">
+            <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-4 uppercase tracking-wide">
+              Internal &amp; Concurrent Audit
             </h3>
-            <p className="text-gray-500 text-sm sm:text-base leading-relaxed">
-              It is an independent, objectives assurance and consulting activity designed to add value 
-              and improve an organization's operations. It helps organization to accomplish objectives 
+            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed font-medium">
+              An independent, objective assurance and consulting activity designed to add value 
+              and improve operations. We help your organization accomplish key objectives 
               by bringing a systematic, disciplined approach to evaluate and improve the 
-              effectiveness of risk management, control and government process.
+              effectiveness of risk management, controls, and corporate governance.
             </p>
-          </div>
+          </StaggerItem>
 
-          {/* Card 2 */}
-          <div className="flex flex-col">
-            <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3">
-              Management & Operations Audit
+          <StaggerItem className="bg-white rounded-3xl border border-slate-100 p-8 shadow-xs hover:shadow-md transition-shadow">
+            <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-4 uppercase tracking-wide">
+              Management &amp; Operations Audit
             </h3>
-            <p className="text-gray-500 text-sm sm:text-base leading-relaxed">
-              It is an assessment of methods and policies of an organization's management in the 
-              administration and the use of resources, tactical and strategic planning, and employee 
-              and organizational improvement.
+            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed font-medium">
+              An detailed assessment of methods and policies of management in corporate 
+              administration, allocation of capital resources, tactical and strategic planning, and overall 
+              organizational and employee workflow improvement.
             </p>
-          </div>
+          </StaggerItem>
 
-          {/* Card 3 */}
-          <div className="flex flex-col">
-            <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3">
+          <StaggerItem className="bg-white rounded-3xl border border-slate-100 p-8 shadow-xs hover:shadow-md transition-shadow">
+            <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-4 uppercase tracking-wide">
               Forensic Audit
             </h3>
-            <p className="text-gray-500 text-sm sm:text-base leading-relaxed">
-              It is an examination and evaluation of a entities financial records to derive evidence 
-              that can be used in a court of law or legal proceeding in cases of fraud, embezzlement, 
-              or other financial crimes.
+            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed font-medium">
+              A precise examination and evaluation of an entity&apos;s financial records to derive concrete evidence 
+              that can be presented in courtrooms or legal proceedings during disputes involving financial crimes, 
+              embezzlement, or administrative fraud.
             </p>
-          </div>
+          </StaggerItem>
 
-          {/* Card 4 */}
-          <div className="flex flex-col">
-            <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3">
+          <StaggerItem className="bg-white rounded-3xl border border-slate-100 p-8 shadow-xs hover:shadow-md transition-shadow">
+            <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-4 uppercase tracking-wide">
               Statutory Audit
             </h3>
-            <p className="text-gray-500 text-sm sm:text-base leading-relaxed">
-              The audit which is mandated by a Law or a Statute to ensure the books of accounts 
-              presented to the regulators and public are true and fair. Statutory audit is mandatory if 
-              certain criteria are being met by the business.
+            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed font-medium">
+              Mandatory audits required by law to certify that presented books of accounts and balances 
+              give a true and fair view to regulators and the public. We manage statutory audit schedules 
+              for companies meeting legal threshold criteria.
             </p>
-          </div>
+          </StaggerItem>
+        </StaggerContainer>
 
-        </div>
-
-        {/* Contact Button */}
-        <div className="flex justify-center mt-16 sm:mt-20">
-          <Link 
+        <ScaleIn className="flex justify-center mt-16">
+          <Button
             href="/contact"
-            className="inline-block text-center bg-[#2B0EA8] hover:bg-[#1E0880] text-white font-bold py-3.5 px-16 rounded-lg shadow-md hover:shadow-xl transition-all duration-200 text-sm sm:text-base tracking-wide"
+            variant="gradient"
+            className="px-12 py-4.5 font-bold shadow-md hover:shadow-lg w-full sm:w-auto"
           >
-            Contact
-          </Link>
-        </div>
+            Request Audit
+          </Button>
+        </ScaleIn>
 
       </div>
     </section>

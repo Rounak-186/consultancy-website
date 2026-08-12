@@ -1,80 +1,96 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
 import { ServicesAccordion } from "./ServicesAccordion";
+import { Button } from "@/components/ui/Button";
+import { RiCheckLine } from "@remixicon/react";
+import { FadeInUp, ScaleIn } from "@/components/animation";
 
 export const ServicesDetails = () => {
   return (
-    <section className="bg-[#FAF6FB] w-full py-20 lg:py-28">
+    <section className="bg-slate-50/50 w-full py-20 lg:py-28">
       <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
           
-          {/* Left Column: Text Content and Button */}
-          <div className="lg:col-span-6 flex flex-col justify-start">
-            
-            {/* Section 1 */}
+          <FadeInUp className="lg:col-span-6 flex flex-col justify-start">
             <div className="mb-12">
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-indigo-950 mb-6 leading-tight tracking-tight">
-                Stock & Commodity Broker Related Services
+              <span className="text-secondary font-bold text-xs uppercase tracking-wider block mb-2">
+                Broker Compliance
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-6 leading-tight">
+                Stock &amp; Commodity Broker Related Services
               </h2>
-              <ul className="space-y-4.5 text-gray-600 font-medium text-sm sm:text-base">
-                <li className="flex items-start gap-2.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
-                  <span>Company Incorporation</span>
+              <ul className="space-y-4 text-slate-500 font-medium text-xs sm:text-sm">
+                <li className="flex items-start gap-3">
+                  <div className="p-0.5 rounded-full bg-primary/10 text-primary mt-0.5 shrink-0">
+                    <RiCheckLine className="w-4 h-4" />
+                  </div>
+                  <span>Company Incorporation &amp; Structural Planning</span>
                 </li>
-                <li className="flex items-start gap-2.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
+                <li className="flex items-start gap-3">
+                  <div className="p-0.5 rounded-full bg-primary/10 text-primary mt-0.5 shrink-0">
+                    <RiCheckLine className="w-4 h-4" />
+                  </div>
                   <span>Trading Membership Application of NSE, BSE and other Exchanges</span>
                 </li>
-                <li className="flex items-start gap-2.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
-                  <span>Depository Participant Registration</span>
+                <li className="flex items-start gap-3">
+                  <div className="p-0.5 rounded-full bg-primary/10 text-primary mt-0.5 shrink-0">
+                    <RiCheckLine className="w-4 h-4" />
+                  </div>
+                  <span>Depository Participant Registration and setups</span>
                 </li>
-                <li className="flex items-start gap-2.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
-                  <span>System Planning & Development</span>
+                <li className="flex items-start gap-3">
+                  <div className="p-0.5 rounded-full bg-primary/10 text-primary mt-0.5 shrink-0">
+                    <RiCheckLine className="w-4 h-4" />
+                  </div>
+                  <span>System Planning, Risk Development &amp; Security Auditing</span>
                 </li>
-                <li className="flex items-start gap-2.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
-                  <span>Statutory, Internal & Concurrent Audit</span>
+                <li className="flex items-start gap-3">
+                  <div className="p-0.5 rounded-full bg-primary/10 text-primary mt-0.5 shrink-0">
+                    <RiCheckLine className="w-4 h-4" />
+                  </div>
+                  <span>Statutory, Internal &amp; Concurrent operations Auditing</span>
                 </li>
-                <li className="flex items-start gap-2.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
-                  <span>Certifications and other Compliances</span>
+                <li className="flex items-start gap-3">
+                  <div className="p-0.5 rounded-full bg-primary/10 text-primary mt-0.5 shrink-0">
+                    <RiCheckLine className="w-4 h-4" />
+                  </div>
+                  <span>Certifications and other exchange compliance filings</span>
                 </li>
               </ul>
             </div>
 
-            {/* Section 2 */}
             <div className="mb-14">
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-indigo-950 mb-6 leading-tight tracking-tight">
+              <span className="text-secondary font-bold text-xs uppercase tracking-wider block mb-2">
+                Cross-Border Services
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-6 leading-tight">
                 EB-5 Immigration Application
               </h2>
-              <ul className="space-y-4.5 text-gray-600 font-medium text-sm sm:text-base">
-                <li className="flex items-start gap-2.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
-                  <span>Analysis & Preparation of Source of Fund for Investment based United States Immigration VISA.</span>
+              <ul className="space-y-4 text-slate-500 font-medium text-xs sm:text-sm">
+                <li className="flex items-start gap-3">
+                  <div className="p-0.5 rounded-full bg-primary/10 text-primary mt-0.5 shrink-0">
+                    <RiCheckLine className="w-4 h-4" />
+                  </div>
+                  <span>Detailed analysis &amp; preparation of Source of Fund statements for Investment-based United States Immigration VISA programs.</span>
                 </li>
               </ul>
             </div>
 
-            {/* Contact Button */}
             <div>
-              <Link 
+              <Button
                 href="/contact"
-                className="inline-block text-center bg-[#2B0EA8] hover:bg-[#1E0880] text-white font-bold py-4 px-16 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 text-sm sm:text-base tracking-wide"
+                variant="gradient"
+                className="px-12 py-4.5 font-bold shadow-md hover:shadow-lg w-full sm:w-auto"
               >
-                Contact
-              </Link>
+                Contact Advisors
+              </Button>
             </div>
-            
-          </div>
+          </FadeInUp>
 
-          {/* Right Column: Accordion */}
-          <div className="lg:col-span-6 w-full lg:sticky lg:top-24">
+          <ScaleIn delay={0.1} className="lg:col-span-6 w-full lg:sticky lg:top-28">
             <ServicesAccordion />
-          </div>
+          </ScaleIn>
           
         </div>
       </div>

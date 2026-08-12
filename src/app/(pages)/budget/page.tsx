@@ -1,10 +1,5 @@
-import React from "react";
+import { redirect } from "next/navigation";
 
 export default function BudgetPage() {
-  return (
-    <div className="max-w-4xl mx-auto pt-28 pb-16 px-4">
-      <h1 className="text-3xl font-bold text-gray-900 mb-4">Budget Updates</h1>
-      <p className="text-gray-600">Find the latest national and corporate budget updates here.</p>
-    </div>
-  );
+  redirect("/publications/budget-updates");
 }

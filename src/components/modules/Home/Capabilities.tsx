@@ -1,7 +1,9 @@
 "use client";
+
 import React, { useState } from "react";
 import clsx from "clsx";
 import { RiCustomerService2Line, RiFileTextLine, RiSunLine } from "@remixicon/react";
+import { FadeInUp, StaggerContainer, StaggerItem } from "@/components/animation";
 
 type capabilityType = {
   icon: React.ReactNode;
@@ -12,18 +14,18 @@ type capabilityType = {
 const capabilitiesList: capabilityType[] = [
   {
     icon: <RiCustomerService2Line />,
-    title: "24/7 Support",
-    description: "We provide round-the-clock client assistance to resolve your compliance queries and urgent auditing issues anytime.",
+    title: "24/7 Support Desk",
+    description: "We provide round-the-clock advisory assistance to address statutory queries and critical filing reviews.",
   },
   {
     icon: <RiFileTextLine />,
-    title: "Plannings",
-    description: "We offer strategic planning services that help you organize, prioritize, and execute your goals efficiently with a clear roadmap for success.",
+    title: "Strategic Advisory",
+    description: "Tailored financial planning structures and regulatory checklists to keep your company compliant as it scales.",
   },
   {
     icon: <RiSunLine />,
-    title: "Quality Control",
-    description: "Rigorous quality control processes to ensure tax advisory and statutory reports meet the highest international standards.",
+    title: "Vigilant Quality Control",
+    description: "Multi-tier auditing reviews to ensure tax declarations and statutory balances meet international standards.",
   },
 ];
 
@@ -31,65 +33,60 @@ export const Capabilities = () => {
   const [activeCardIndex, setActiveCardIndex] = useState(1);
 
   return (
-    <section className="bg-services-bg py-32 lg:py-40 w-full overflow-hidden">
+    <section className="bg-slate-50 py-24 lg:py-32 w-full overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16">
-        <div className="text-center mb-10">
-          <div className="relative inline-block px-12 py-4.5 font-extrabold text-3xl tracking-widest text-slate-950 uppercase bg-white mb-6">
-            Our Capabilities
-            <div className="absolute top-0 left-0 right-0 h-[3px] bg-primary" />
-            <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-primary" />
-            <div className="absolute top-3 bottom-3 left-3 w-[3px] bg-primary" />
-            <div className="absolute top-3 bottom-3 right-3 w-[3px] bg-primary" />
-          </div>
-          <p className="mt-4 text-gray-500 text-base sm:text-lg max-w-3xl mx-auto leading-relaxed">
-            We provide a comprehensive range of services designed to meet your business needs with precision and excellence. Our strengths lie in delivering dependable solutions that help you grow and succeed.
+        
+        <FadeInUp className="text-center max-w-3xl mx-auto mb-16">
+          <span className="text-primary font-bold text-xs sm:text-sm uppercase tracking-[0.25em] mb-4 block">
+            Core Competencies
+          </span>
+          <h2 className="text-3xl sm:text-5xl font-black text-slate-900 uppercase">
+            WHY PARTNER WITH <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">YOUR COMPANY</span>
+          </h2>
+          <p className="mt-6 text-gray-500 text-sm sm:text-base leading-relaxed">
+            Our capabilities are designed to handle complex direct tax assessments, transfer pricing compliance, and corporate filings with high efficiency.
           </p>
-        </div>
+        </FadeInUp>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16 mt-20 px-4 sm:px-10 lg:px-16">
-          {capabilitiesList.map((capability, index) => (
-            <div
-              key={index}
-              onMouseEnter={() => setActiveCardIndex(index)}
-              className="relative group min-h-[300px]"
-            >
-              <div 
-                className={clsx(
-                  "absolute inset-0 border-l-2 border-b-2 transition-all duration-300 -translate-x-3.5 translate-y-3.5",
-                  index === activeCardIndex ? "border-primary" : "border-gray-400/80"
-                )}
-              />
-              
-              <div className="relative bg-white p-10 h-full flex flex-col items-center justify-center shadow-sm select-none transition-all duration-300">
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 mt-12 px-2 sm:px-6">
+          {capabilitiesList.map((capability, index) => {
+            const isSelected = index === activeCardIndex;
+            return (
+              <StaggerItem
+                key={index}
+                onMouseEnter={() => setActiveCardIndex(index)}
+                className="relative group min-h-[280px] cursor-default select-none"
+              >
                 <div 
                   className={clsx(
-                    "w-14 h-14 flex items-center justify-center transition-colors duration-300 mb-6 [&_svg]:w-10 [&_svg]:h-10",
-                    index === activeCardIndex ? "text-primary" : "text-slate-950"
+                    "absolute inset-0 rounded-3xl border-l-2 border-b-2 transition-all duration-300 -translate-x-3 translate-y-3",
+                    isSelected ? "border-primary bg-indigo-50/20" : "border-slate-200"
                   )}
-                >
-                  {capability.icon}
-                </div>
+                />
                 
-                <h3 className="text-lg font-bold tracking-wider text-slate-900 uppercase text-center">
-                  {capability.title}
-                </h3>
-                
-                <div 
-                  className={clsx(
-                    "w-full transition-all duration-300 ease-in-out overflow-hidden text-center",
-                    index === activeCardIndex 
-                      ? "max-h-36 opacity-100 mt-5" 
-                      : "max-h-0 opacity-0"
-                  )}
-                >
-                  <p className="text-sm text-gray-400 leading-relaxed max-w-[240px] mx-auto">
+                <div className="relative bg-white rounded-3xl p-8 sm:p-10 h-full flex flex-col justify-center items-center shadow-sm transition-all duration-300 hover:shadow-md border border-slate-100">
+                  <div 
+                    className={clsx(
+                      "w-16 h-16 rounded-2xl flex items-center justify-center transition-colors duration-300 mb-6 [&_svg]:w-8 [&_svg]:h-8",
+                      isSelected ? "bg-primary/10 text-primary" : "bg-slate-50 text-slate-800"
+                    )}
+                  >
+                    {capability.icon}
+                  </div>
+                  
+                  <h3 className="text-lg font-extrabold tracking-wide text-slate-900 uppercase text-center mb-4">
+                    {capability.title}
+                  </h3>
+                  
+                  <p className="text-xs sm:text-sm text-slate-400 leading-relaxed text-center font-medium max-w-[260px] mx-auto">
                     {capability.description}
                   </p>
                 </div>
-              </div>
-            </div>
-          ))}
-        </div>
+              </StaggerItem>
+            );
+          })}
+        </StaggerContainer>
+
       </div>
     </section>
   );

@@ -84,7 +84,7 @@ const navBaroptions: navBarOptionType[] = [
     dropdownOptions: [
       {
         label: "Event",
-        href: "/knowledge-events/events",
+        href: "/knowledge-events",
       },
       {
         label: "Blogs",
@@ -106,7 +106,7 @@ const navBaroptions: navBarOptionType[] = [
 export const NavBar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
-  const isHome = pathname === "/" || pathname === "/home" || pathname === "/contact" || pathname.startsWith("/services");
+  const isHome = pathname === "/" || pathname === "/home" || pathname === "/contact" || pathname.startsWith("/services") || pathname.startsWith("/knowledge") || pathname.startsWith("/publications");
 
   return (
     <header 
@@ -127,7 +127,7 @@ export const NavBar = () => {
               : "bg-gradient-to-r from-primary to-indigo-600 bg-clip-text text-transparent"
           )}
         >
-          NAME
+          YOUR COMPANY
         </Link>
 
         <nav className="hidden lg:flex items-center gap-6">
