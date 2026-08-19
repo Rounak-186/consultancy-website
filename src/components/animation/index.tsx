@@ -88,4 +88,5 @@ export function StaggerItem({ children, duration = 0.5, ...props }: WrapperProps
 }
 
 export { Typewriter } from "./Typewriter";
+export { NumberCounter, NumberCounter as CountUp } from "./NumberCounter";
 

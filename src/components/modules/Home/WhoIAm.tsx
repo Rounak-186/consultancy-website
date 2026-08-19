@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/Button";
-import { FadeInUp, ScaleIn } from "@/components/animation";
+import { FadeInUp, ScaleIn, NumberCounter } from "@/components/animation";
 
 export const WhoIAm = () => {
   return (
@@ -33,15 +33,21 @@ export const WhoIAm = () => {
             
             <div className="grid grid-cols-3 gap-4 text-center mt-2">
               <div className="bg-slate-50 rounded-2xl p-4 border border-slate-100">
-                <span className="block text-2xl sm:text-3xl font-black text-primary">18+</span>
+                <span className="block text-2xl sm:text-3xl font-black text-primary">
+                  <NumberCounter from={1} to={18} suffix="+" duration={1.5} />
+                </span>
                 <span className="text-[10px] sm:text-xs font-bold text-slate-400 uppercase tracking-wide">Years Active</span>
               </div>
               <div className="bg-slate-50 rounded-2xl p-4 border border-slate-100">
-                <span className="block text-2xl sm:text-3xl font-black text-secondary">1000+</span>
+                <span className="block text-2xl sm:text-3xl font-black text-secondary">
+                  <NumberCounter from={1} to={1000} suffix="+" duration={2} />
+                </span>
                 <span className="text-[10px] sm:text-xs font-bold text-slate-400 uppercase tracking-wide">Clients</span>
               </div>
               <div className="bg-slate-50 rounded-2xl p-4 border border-slate-100">
-                <span className="block text-2xl sm:text-3xl font-black text-accent">99.8%</span>
+                <span className="block text-2xl sm:text-3xl font-black text-accent">
+                  <NumberCounter from={1} to={99.8} decimals={1} suffix="%" duration={2} />
+                </span>
                 <span className="text-[10px] sm:text-xs font-bold text-slate-400 uppercase tracking-wide">Compliance</span>
               </div>
             </div>

@@ -56,7 +56,7 @@ export default function CareersPage() {
         </FadeInUp>
 
         <ScaleIn delay={0.1} className="lg:col-span-7">
-          <div className="bg-slate-50 border border-slate-100 rounded-[32px] p-8 sm:p-12 shadow-xl">
+          <div className="bg-slate-50 border border-slate-100 rounded-4xl p-8 sm:p-12 shadow-xl">
             <div className="text-center mb-8">
               <span className="text-xs font-bold text-slate-400 uppercase tracking-widest block mb-1">
                 For Career Opportunities

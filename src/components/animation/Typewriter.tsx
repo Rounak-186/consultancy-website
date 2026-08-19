@@ -70,10 +70,14 @@ export function Typewriter({
     return () => clearTimeout(timer);
   }, [text, isDeleting, wordIndex, words, loop, typeSpeed, deleteSpeed, delaySpeed, isMounted, isDone]);
 
+  const currentFullWord = words[wordIndex % words.length] || "";
+  const isWordCompleted = !isDeleting && text === currentFullWord && text.length > 0;
+  const showCursor = cursor && isMounted && !isDone && !isWordCompleted;
+
   return (
     <span className={className}>
       {text}
-      {cursor && isMounted && !isDone && (
+      {showCursor && (
         <span className={cursorClassName} style={{ display: "inline-block" }}>
           {cursorStyle}
         </span>
